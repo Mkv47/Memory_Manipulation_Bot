@@ -227,7 +227,7 @@ int main() {
     std::fstream pattrenFile;
     std::fstream patestFile;
     std::string pattern;
-    std::ofstream outputFile("FoundAddresses.txt", std::ios::app);
+    std::ofstream outputFile("./Data/FoundAddresses.txt", std::ios::app);
 
 
     patestFile.open("./Data/Patest.txt", std::ios::in);
@@ -356,8 +356,8 @@ int main() {
             std::cout << std::dec << "Attack Script " << locValueFX <<" | "<< locValueFY <<" | "<< isCombatValue << " | " << check << "                 \r";
 
             valueToWrite = pCursorLoc;
-            cValueToWrite1 = (pCursorLoc / 65536)* 1572864; //This is the equatuon to transfare X value
-            cValueToWrite2 = (pCursorLoc % 65536)* 1572864; //This is the equatuon to transfare Y value
+            cValueToWrite1 = (pCursorLoc / 65536)* 1572864; //This is the equation to transfare X value
+            cValueToWrite2 = (pCursorLoc % 65536)* 1572864; //This is the equation to transfare Y value
             
             WriteProcessMemory(hProcess, (LPVOID)(write_address), &valueToWrite, sizeof(valueToWrite), NULL);
             WriteProcessMemory(hProcess, (LPVOID)(write_address - 0x58), &cValueToWrite1, sizeof(cValueToWrite1), NULL);
